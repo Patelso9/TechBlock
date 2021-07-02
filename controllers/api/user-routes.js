@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const bcrypt = require('bcrypt');
 const { User } = require('../../models');
 
 // URL: /api/user
@@ -13,9 +14,9 @@ router.post('/', async (req, res) => {
 
     req.session.save(() => {
       // TODO: SET USERID IN REQUEST SESSION TO ID RETURNED FROM DATABASE
-      req.session.userid = newUser.id;
+      req.session.userId = user.id;
       // TODO: SET USERNAME IN REQUEST SESSION TO USERNAME RETURNED FROM DATABASE
-      req.session.name = newUser.name;
+      req.session.userName = user.userName;
       // TODO: SET LOGGEDIN TO TRUE IN REQUEST SESSION
       req.session.loggedIn = true;
 
@@ -52,7 +53,7 @@ router.post('/login', async (req, res) => {
       // TODO: SET USERID IN REQUEST SESSION TO ID RETURNED FROM DATABASE
       req.session.userid = user.id;
       // TODO: SET USERNAME IN REQUEST SESSION TO USERNAME RETURNED FROM DATABASE
-      req.session.name = user.name;
+      req.session.name = user.userName;
       // TODO: SET LOGGEDIN TO TRUE IN REQUEST SESSION
       req.session.loggedIn = true;
 
