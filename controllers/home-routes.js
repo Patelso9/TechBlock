@@ -21,7 +21,7 @@ router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       // TODO: YOUR CODE HERE
-      include: [User, {model: [Comment], include: [User]} ]
+      include: [User, {model: Comment, include: [User]} ]
     });
 
     if (postData) {

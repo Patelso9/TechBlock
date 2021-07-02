@@ -14,11 +14,11 @@ router.post('/', async (req, res) => {
 
     req.session.save(() => {
       // TODO: SET USERID IN REQUEST SESSION TO ID RETURNED FROM DATABASE
-      req.session.userId = user.id;
-      // TODO: SET USERNAME IN REQUEST SESSION TO USERNAME RETURNED FROM DATABASE
-      req.session.userName = user.userName;
-      // TODO: SET LOGGEDIN TO TRUE IN REQUEST SESSION
-      req.session.loggedIn = true;
+      req.session.newUser = newUser.id;
+      // // TODO: SET USERNAME IN REQUEST SESSION TO USERNAME RETURNED FROM DATABASE
+      // req.session.newUser = newUser.name;
+      // // TODO: SET LOGGEDIN TO TRUE IN REQUEST SESSION
+      // req.session.loggedIn = true;
 
       res.json(newUser);
     });
@@ -42,7 +42,7 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    const validPassword = user.checkPassword(req.body.password);
+    const validPassword = await user.checkPassword(req.body.password);
 
     if (!validPassword) {
       res.status(400).json({ message: 'No user account found!' });
@@ -51,9 +51,9 @@ router.post('/login', async (req, res) => {
 
     req.session.save(() => {
       // TODO: SET USERID IN REQUEST SESSION TO ID RETURNED FROM DATABASE
-      req.session.userid = user.id;
+      req.session.userId = user.id;
       // TODO: SET USERNAME IN REQUEST SESSION TO USERNAME RETURNED FROM DATABASE
-      req.session.name = user.userName;
+      req.session.userName = user.userName;
       // TODO: SET LOGGEDIN TO TRUE IN REQUEST SESSION
       req.session.loggedIn = true;
 
