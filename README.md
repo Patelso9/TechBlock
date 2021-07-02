@@ -1,8 +1,8 @@
 # Tech Blog
 
 ## Links
-github repo: 
-heroku: 
+github repo: https://github.com/Patelso9/TechBlock
+heroku: https://techblog-patelso9.herokuapp.com/login
 
 ## 
 

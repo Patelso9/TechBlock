@@ -15,7 +15,7 @@ router.post('/', async (req, res) => {
     req.session.save(() => {
       // TODO: SET USERID IN REQUEST SESSION TO ID RETURNED FROM DATABASE
       req.session.newUser = newUser.id;
-      // // TODO: SET USERNAME IN REQUEST SESSION TO USERNAME RETURNED FROM DATABASE
+      // TODO: SET USERNAME IN REQUEST SESSION TO USERNAME RETURNED FROM DATABASE
       // req.session.newUser = newUser.name;
       // // TODO: SET LOGGEDIN TO TRUE IN REQUEST SESSION
       // req.session.loggedIn = true;
