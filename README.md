@@ -3,6 +3,7 @@
 ## Links
 github repo: https://github.com/Patelso9/TechBlock
 heroku: https://techblog-patelso9.herokuapp.com/login
+youtube: https://youtu.be/02wJRQcZv4o
 
 ## 
 
