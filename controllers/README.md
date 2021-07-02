@@ -1,3 +1,14 @@
+# Tech Blog
+
+## Links
+github repo: 
+heroku: 
+
+## 
+
+
+_____________________________
+
 # 14 Model-View-Controller (MVC): Tech Blog
 
 ## Your Task
